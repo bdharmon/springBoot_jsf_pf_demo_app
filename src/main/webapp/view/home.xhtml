@@ -9,18 +9,21 @@
 
 <h:body>
 
-    <h:form>
+    <form action="/logout" method="post">
+        <h:form>
 
-        <p:card id="userDetails">
+            <p:card id="userDetails">
                 <div>Home Page</div>
+
+                <p><h:outputText value="UserSessionManager: #{userSessionManager}" /></p>
 
                 <p><h:outputText value="Username: #{userSessionManager.username}" /></p>
                 <p><h:outputText value="Password: #{userSessionManager.password}" /></p>
-        </p:card>
+            </p:card>
 
-        <p:commandButton value="Logout" action="#{userSessionManager.processLogout()}" />
-
-    </h:form>
+            <button class="ui-button" type="submit">Logout</button>
+        </h:form>
+    </form>
 
 </h:body>
 

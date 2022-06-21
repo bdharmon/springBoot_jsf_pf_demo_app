@@ -12,9 +12,7 @@
     <form action="#{request.contextPath}/authenticateLogin" method="post">
         <h:form prependId="false">
             <p:card>
-                <p:messages id="messages" showDetail="true" closable="true">
-                    <p:autoUpdate/>
-                </p:messages>
+                <p><h:outputText value="UserSessionManager: #{userSessionManager}" /></p>
 
                 <div>
                     <p:outputLabel for="username" value="Username"/>
@@ -26,7 +24,7 @@
                     <p:password id="password" value="#{userSessionManager.password}" />
                 </div>
 
-                <button class="ui-button">Login</button>
+                <button class="ui-button" type="submit">Login</button>
             </p:card>
         </h:form>
     </form>

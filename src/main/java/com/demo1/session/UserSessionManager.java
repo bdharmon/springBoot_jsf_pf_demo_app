@@ -1,14 +1,10 @@
 package com.demo1.session;
 
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
-import java.io.IOException;
+import org.springframework.web.context.annotation.SessionScope;
 
 @Component("userSessionManager")
-@Scope("session")
+@SessionScope
 public class UserSessionManager {
 
     private String username;
@@ -32,19 +28,6 @@ public class UserSessionManager {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public void processLogin() throws IOException {
-        System.out.println(getUsername() + " " + getPassword());
-        if (!getPassword().equals("123")) {
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "Invalid Password."));
-            return;
-        }
-        FacesContext.getCurrentInstance().getExternalContext().redirect("/home");
-    }
-
-    public void processLogout() throws IOException {
-        FacesContext.getCurrentInstance().getExternalContext().redirect("/login");
     }
 
 }
