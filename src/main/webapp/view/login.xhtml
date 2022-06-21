@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Login Page</title>
+</h:head>
+
+<h:body>
+
+    <form action="#{request.contextPath}/authenticateLogin" method="post">
+        <h:form prependId="false">
+            <p:card>
+                <p:messages id="messages" showDetail="true" closable="true">
+                    <p:autoUpdate/>
+                </p:messages>
+
+                <div>
+                    <p:outputLabel for="username" value="Username"/>
+                    <p:inputText id="username" value="#{userSessionManager.username}" />
+                </div>
+
+                <div>
+                    <p:outputLabel for="password" value="Password"/>
+                    <p:password id="password" value="#{userSessionManager.password}" />
+                </div>
+
+                <button class="ui-button">Login</button>
+            </p:card>
+        </h:form>
+    </form>
+
+</h:body>
+
+</html>
