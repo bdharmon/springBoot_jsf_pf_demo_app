@@ -9,25 +9,42 @@
 
 <h:body>
 
-    <form action="#{request.contextPath}/authenticateLogin" method="post">
+        <form id="sec-form" action="/login">
+            <input id="username" name="username" type="text" />
+            <input id="password" name="password" type="password" />
+        </form>
+
         <h:form prependId="false">
+
             <p:card>
                 <p><h:outputText value="UserSessionManager: #{userSessionManager}" /></p>
 
                 <div>
-                    <p:outputLabel for="username" value="Username"/>
-                    <p:inputText id="username" value="#{userSessionManager.username}" />
+                    <p:outputLabel for="jsf_username" value="Username"/>
+                    <p:inputText id="jsf_username" value="#{userSessionManager.username}" />
                 </div>
 
                 <div>
-                    <p:outputLabel for="password" value="Password"/>
-                    <p:password id="password" value="#{userSessionManager.password}" />
+                    <p:outputLabel for="jsf_password" value="Password"/>
+                    <p:password id="jsf_password" value="#{userSessionManager.password}" />
                 </div>
 
-                <button class="ui-button" type="submit">Login</button>
+                <p:commandButton value="Login" />
             </p:card>
+
         </h:form>
-    </form>
+
+        <script type="text/javascript">
+            const formSubmit = () => {
+                const uName = document.getElementById("username");
+                const pWord = document.getElementById("password");
+                const jsfUser = document.getElementById("jsf_username");
+                const jsfPass = document.getElementById("jsf_password");
+
+                uName.value = jsfUser.value;
+                pWord.value = jsfPass.value;
+            }
+        </script>
 
 </h:body>
 

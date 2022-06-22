@@ -3,6 +3,10 @@ package com.demo1.session;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
 
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
+import java.io.IOException;
+
 @Component("userSessionManager")
 @SessionScope
 public class UserSessionManager {
@@ -30,4 +34,11 @@ public class UserSessionManager {
         this.password = password;
     }
 
+    public void processLogin() throws IOException {
+        System.out.println("*** inside processLogin() ***");
+        FacesContext facesContext = FacesContext.getCurrentInstance();
+        ExternalContext externalContext = facesContext.getExternalContext();
+        externalContext.dispatch("/login");
+        facesContext.responseComplete();
+    }
 }
