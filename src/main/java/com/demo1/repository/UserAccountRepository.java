@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 import java.util.UUID;
 
 public interface UserAccountRepository extends JpaRepository<UserAccount, UUID> {
+    UserAccount findByUsername(String username);
 }

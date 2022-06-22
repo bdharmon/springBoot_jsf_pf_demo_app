@@ -18,6 +18,9 @@ public class UserAccount {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "role")
+    private String role;
+
     public UserAccount() {}
 
     public UserAccount(String username, String password) {
@@ -49,12 +52,21 @@ public class UserAccount {
         this.password = password;
     }
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
     @Override
     public String toString() {
         return "UserAccount{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
                 '}';
     }
 }

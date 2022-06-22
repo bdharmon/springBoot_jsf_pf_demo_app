@@ -9,7 +9,8 @@
 
 <h:body>
 
-        <h:form action="/login" method="post">
+    <form action="/logout" method="post">
+        <h:form>
 
             <p:card>
                 <div>Home Page</div>
@@ -17,12 +18,12 @@
                 <p><h:outputText value="UserSessionManager: #{userSessionManager}" /></p>
 
                 <p><h:outputText value="Username: #{userSessionManager.username}" /></p>
-                <p><h:outputText value="Password: #{userSessionManager.password}" /></p>
             </p:card>
 
-            <p:commandButton value="Logout" />
+            <button type="submit">Logout</button>
 
         </h:form>
+    </form>
 
 </h:body>
 

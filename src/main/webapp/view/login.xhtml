@@ -9,42 +9,25 @@
 
 <h:body>
 
-        <form id="sec-form" action="/login">
-            <input id="username" name="username" type="text" />
-            <input id="password" name="password" type="password" />
-        </form>
-
-        <h:form prependId="false">
+    <form action="/login" method="post">
 
             <p:card>
                 <p><h:outputText value="UserSessionManager: #{userSessionManager}" /></p>
 
                 <div>
-                    <p:outputLabel for="jsf_username" value="Username"/>
-                    <p:inputText id="jsf_username" value="#{userSessionManager.username}" />
+                    <p:outputLabel for="username" value="Username"/>
+                    <p:inputText id="username" />
                 </div>
 
                 <div>
-                    <p:outputLabel for="jsf_password" value="Password"/>
-                    <p:password id="jsf_password" value="#{userSessionManager.password}" />
+                    <p:outputLabel for="password" value="Password"/>
+                    <p:password id="password" />
                 </div>
 
-                <p:commandButton value="Login" />
+                <button type="submit">Login</button>
             </p:card>
 
-        </h:form>
-
-        <script type="text/javascript">
-            const formSubmit = () => {
-                const uName = document.getElementById("username");
-                const pWord = document.getElementById("password");
-                const jsfUser = document.getElementById("jsf_username");
-                const jsfPass = document.getElementById("jsf_password");
-
-                uName.value = jsfUser.value;
-                pWord.value = jsfPass.value;
-            }
-        </script>
+    </form>
 
 </h:body>
 
