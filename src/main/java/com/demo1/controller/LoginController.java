@@ -10,7 +10,7 @@ public class LoginController {
         System.out.println("*** LoginController bean created. ***");
     }
 
-    @GetMapping("login")
+    @GetMapping(name = "login", value = {"/", "login"})
     public String login() {
         return "login";
     }

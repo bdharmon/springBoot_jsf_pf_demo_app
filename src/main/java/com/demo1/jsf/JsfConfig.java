@@ -1,4 +1,4 @@
-package com.demo1.config;
+package com.demo1.jsf;
 
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
