@@ -1,5 +1,6 @@
 package com.demo1.session;
 
+import com.demo1.entity.UserAccount;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
@@ -13,12 +14,14 @@ public class UserSessionManager {
         System.out.println("*** UserSessionManager bean created. ***");
     }
 
-    public String getUsername() {
+    public UserDetailsImpl getUser() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
         System.out.println("Principal: " + authentication.getPrincipal());
         System.out.println("Credentials: " + authentication.getCredentials());
         System.out.println("Details: " + authentication.getDetails());
-        return authentication.getName();
+        System.out.println("User Account: " + userDetails.getUserAccount());
+        return userDetails;
     }
 
 }

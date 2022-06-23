@@ -20,9 +20,9 @@ public class Demo1Application {
 	@Bean
 	public CommandLineRunner demo(UserAccountRepository userAccountRepository) {
 		return (args) -> {
-			UserAccount user1 = new UserAccount("john", new BCryptPasswordEncoder().encode("test123"));
-			UserAccount user2 = new UserAccount("bill", new BCryptPasswordEncoder().encode("test123"));
-			UserAccount user3 = new UserAccount("zack", new BCryptPasswordEncoder().encode("test123"));
+			UserAccount user1 = new UserAccount("john", new BCryptPasswordEncoder().encode("test123"), "john@email.com");
+			UserAccount user2 = new UserAccount("bill", new BCryptPasswordEncoder().encode("test123"), "bill@email.com");
+			UserAccount user3 = new UserAccount("zack", new BCryptPasswordEncoder().encode("test123"), "zack@email.com");
 
 			userAccountRepository.saveAll(List.of(user1, user2, user3));
 

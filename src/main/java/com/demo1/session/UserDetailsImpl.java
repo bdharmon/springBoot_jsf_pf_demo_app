@@ -14,6 +14,10 @@ public class UserDetailsImpl implements UserDetails {
         this.userAccount = userAccount;
     }
 
+    public UserAccount getUserAccount() {
+        return userAccount;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
