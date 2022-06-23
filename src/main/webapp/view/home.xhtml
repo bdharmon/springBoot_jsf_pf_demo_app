@@ -6,52 +6,23 @@
         xmlns:p="http://primefaces.org/ui"
 >
 
-                <h:form>
+    <ui:define name="content">
 
-                    <p:card>
-                        <div>Home Page</div>
+        <h:form>
 
-                        <p><h:outputText value="UserSessionManager: #{userSessionManager}" /></p>
+            <p:card>
+                <h2>Application Home Page</h2>
 
-                        <p><h:outputText value="iD: #{userSessionManager.user.userAccount.id}" /></p>
-                        <p><h:outputText value="Username: #{userSessionManager.user.userAccount.username}" /></p>
-                        <p><h:outputText value="Email: #{userSessionManager.user.userAccount.email}" /></p>
-                        <p><h:outputText value="Roles: #{userSessionManager.user.authorities}" /></p>
-                    </p:card>
+                <p><h:outputText value="UserSessionManager: #{userSessionManager}" /></p>
 
-                </h:form>
+                <p><h:outputText value="iD: #{userSessionManager.user.userAccount.id}" /></p>
+                <p><h:outputText value="Username: #{userSessionManager.user.userAccount.username}" /></p>
+                <p><h:outputText value="Email: #{userSessionManager.user.userAccount.email}" /></p>
+                <p><h:outputText value="Roles: #{userSessionManager.user.authorities}" /></p>
+            </p:card>
+
+        </h:form>
+
+    </ui:define>
 
 </ui:composition>
-
-<!--<html xmlns="http://www.w3.org/1999/xhtml"-->
-<!--      xmlns:h="http://java.sun.com/jsf/html"-->
-<!--      xmlns:p="http://primefaces.org/ui">-->
-
-<!--<h:head>-->
-<!--    <title>Home Page</title>-->
-<!--</h:head>-->
-
-<!--<h:body>-->
-
-<!--    <form action="/logout" method="post">-->
-<!--        <h:form>-->
-
-<!--            <p:card>-->
-<!--                <div>Home Page</div>-->
-
-<!--                <p><h:outputText value="UserSessionManager: #{userSessionManager}" /></p>-->
-
-<!--                <p><h:outputText value="iD: #{userSessionManager.user.userAccount.id}" /></p>-->
-<!--                <p><h:outputText value="Username: #{userSessionManager.user.userAccount.username}" /></p>-->
-<!--                <p><h:outputText value="Email: #{userSessionManager.user.userAccount.email}" /></p>-->
-<!--                <p><h:outputText value="Roles: #{userSessionManager.user.authorities}" /></p>-->
-<!--            </p:card>-->
-
-<!--            <button type="submit">Logout</button>-->
-
-<!--        </h:form>-->
-<!--    </form>-->
-
-<!--</h:body>-->
-
-<!--</html>-->
