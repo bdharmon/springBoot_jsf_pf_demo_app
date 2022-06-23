@@ -1,6 +1,5 @@
 package com.demo1.session;
 
-import com.demo1.entity.UserAccount;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
