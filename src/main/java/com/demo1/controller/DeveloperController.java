@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("developer")
 public class DeveloperController {
 
-    @GetMapping(name = "home", value = {"", "home"})
+    @GetMapping(value = {"", "home"})
     public String home() {
         return "developer/home";
     }

@@ -13,11 +13,11 @@
 
             <p:card>
                 <div>
-                    <h:outputText value="Invalid Username/Password." rendered="#{param.error != null}" />
+                    <p:staticMessage severity="info" summary="INFO" detail="You have successfully logged out." style="width: 100%" rendered="#{param.logout != null}"/>
                 </div>
 
                 <div>
-                    <h:outputText value="You have successfully logged out." rendered="#{param.logout != null}" />
+                    <p:staticMessage severity="error" summary="ERROR" detail="Invalid Username/Password." style="width: 100%" rendered="#{param.error != null}"/>
                 </div>
 
                 <p><h:outputText value="UserSessionManager: #{userSessionManager}" /></p>
