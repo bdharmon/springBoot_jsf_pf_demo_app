@@ -5,13 +5,17 @@
 
 <h:head>
     <title>Login Page</title>
+    <h:outputStylesheet name="css/primeflex.min.css" />
 </h:head>
 
 <h:body>
 
-    <form action="/login" method="post">
+    <form class="flex align-items-center justify-content-center" action="/login" method="post">
 
-            <p:card>
+            <p:card styleClass="">
+                <h2>Welcome to Demo App</h2>
+                <h3>Login</h3>
+
                 <div>
                     <p:staticMessage severity="info" summary="INFO" detail="You have successfully logged out." style="width: 100%" rendered="#{param.logout != null}"/>
                 </div>
@@ -22,20 +26,26 @@
 
                 <p><h:outputText value="UserSessionManager: #{userSessionManager}" /></p>
 
-                <div>
-                    <p:outputLabel for="username" value="Username"/>
-                    <p:inputText id="username" />
-                </div>
+                <div class="flex flex-column align-items-center justify-content-center">
+                    <div class="mb-2 flex flex-column align-items-center justify-content-center">
+                        <p:outputLabel styleClass="col-12 pl-0" for="username" value="Username"/>
+                        <p:inputText id="username" styleClass="col-12" />
+                    </div>
 
-                <div>
-                    <p:outputLabel for="password" value="Password"/>
-                    <p:password id="password" />
-                </div>
+                    <div class="mb-2 flex flex-column align-items-center justify-content-center">
+                        <p:outputLabel styleClass="col-12 pl-0" for="password" value="Password"/>
+                        <p:password id="password" />
+                    </div>
 
-                <button type="submit">Login</button>
+                    <p:button id="loginBtn" styleClass="field grid" value="Login" icon="pi pi-sign-out" onclick="return;" />
+                </div>
             </p:card>
 
     </form>
+
+    <script type="text/javascript">
+        document.getElementById("loginBtn").type = "submit";
+    </script>
 
 </h:body>
 
